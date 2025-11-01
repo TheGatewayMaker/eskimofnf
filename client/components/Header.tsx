@@ -41,7 +41,10 @@ export const Header = () => {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center gap-4">
-          <a href="/#data-plans" className="btn-primary inline-flex items-center gap-2 group">
+          <a
+            href="/#data-plans"
+            className="btn-primary inline-flex items-center gap-2 group"
+          >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
@@ -64,7 +67,10 @@ export const Header = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div id="mobile-menu" className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur">
+        <div
+          id="mobile-menu"
+          className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur"
+        >
           <div className="container-max py-4 space-y-2">
             {navLinks.map((link, i) => (
               <a
@@ -76,7 +82,10 @@ export const Header = () => {
                 {link.label}
               </a>
             ))}
-            <a href="/#data-plans" className="w-full btn-primary flex items-center justify-center gap-2 mt-4">
+            <a
+              href="/#data-plans"
+              className="w-full btn-primary flex items-center justify-center gap-2 mt-4"
+            >
               Get Started
               <ArrowRight className="w-4 h-4" />
             </a>
