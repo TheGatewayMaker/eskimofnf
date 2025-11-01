@@ -123,13 +123,13 @@ export const Footer = () => {
               <p>&copy; {currentYear} Eskimo Global. All rights reserved.</p>
             </div>
             <div className="flex gap-6 text-sm text-blue-300">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/legal" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/legal" className="hover:text-white transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/legal" className="hover:text-white transition-colors">
                 Cookie Policy
               </a>
             </div>
