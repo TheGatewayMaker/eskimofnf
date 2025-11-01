@@ -5,6 +5,8 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { DataPlans } from "@/components/sections/DataPlans";
 import { ReferralProgram } from "@/components/sections/ReferralProgram";
+import { MoreReasons } from "@/components/sections/MoreReasons";
+import { DownloadApp } from "@/components/sections/DownloadApp";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 
@@ -50,6 +52,14 @@ export default function Index() {
 
         <section id="referrals" className="scroll-mt-20 md:scroll-mt-24">
           <ReferralProgram />
+        </section>
+
+        <section id="more-reasons" className="scroll-mt-20 md:scroll-mt-24">
+          <MoreReasons />
+        </section>
+
+        <section id="download" className="scroll-mt-20 md:scroll-mt-24">
+          <DownloadApp />
         </section>
 
         <section id="faq" className="scroll-mt-20 md:scroll-mt-24">

@@ -1,37 +1,6 @@
-import { useState } from "react";
-import { Mail, MessageSquare, User, Send } from "lucide-react";
+import { Mail, User, Send } from "lucide-react";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real app, you'd send this to a backend
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setSubmitted(false), 3000);
-  };
-
   return (
     <section className="section-padding bg-gradient-to-b from-blue-50 to-blue-100">
       <div className="container-max">
@@ -45,7 +14,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Contact info cards */}
           {[
             {
@@ -87,13 +56,11 @@ export const Contact = () => {
 
         <div className="max-w-2xl mx-auto scroll-fade-in">
           <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-12">
-            {submitted && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                Thank you for your message! We'll get back to you soon.
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formspree.io/f/xdkpprzn"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-900 mb-2">
@@ -102,8 +69,6 @@ export const Contact = () => {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="John Doe"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
@@ -116,8 +81,6 @@ export const Contact = () => {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     placeholder="you@example.com"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
@@ -131,17 +94,15 @@ export const Contact = () => {
                 </label>
                 <select
                   name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 >
                   <option value="">Select a subject</option>
-                  <option value="activation">Activation Help</option>
-                  <option value="billing">Billing Question</option>
-                  <option value="technical">Technical Issue</option>
-                  <option value="referral">Referral Question</option>
-                  <option value="other">Other</option>
+                  <option value="Activation Help">Activation Help</option>
+                  <option value="Billing Question">Billing Question</option>
+                  <option value="Technical Issue">Technical Issue</option>
+                  <option value="Referral Question">Referral Question</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
@@ -151,8 +112,6 @@ export const Contact = () => {
                 </label>
                 <textarea
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   placeholder="Tell us how we can help..."
                   required
                   rows={6}
