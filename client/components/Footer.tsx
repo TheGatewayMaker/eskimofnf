@@ -133,9 +133,6 @@ export const Footer = () => {
                 Cookie Policy
               </a>
             </div>
-            <div className="text-blue-300 text-sm">
-              Made with ❤️ for digital nomads & travelers
-            </div>
           </div>
         </div>
       </div>
