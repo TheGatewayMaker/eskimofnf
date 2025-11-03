@@ -66,7 +66,7 @@ export const DataPlans = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group scroll-fade-in relative rounded-2xl overflow-hidden transition-all duration-300 ${
+              className={`group scroll-fade-in relative rounded-2xl overflow-hidden transition-all duration-300 transform motion-safe:hover:-translate-y-1 ${
                 plan.highlighted
                   ? "lg:scale-105 shadow-2xl ring-2 ring-primary"
                   : "border border-gray-200 hover:shadow-xl"
@@ -117,7 +117,7 @@ export const DataPlans = () => {
                 </ul>
 
                 <button
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group ${
+                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group ${
                     plan.highlighted
                       ? "bg-white text-blue-600 hover:bg-blue-50"
                       : "bg-primary text-white hover:bg-blue-700"
