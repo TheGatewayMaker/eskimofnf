@@ -117,7 +117,7 @@ export const DataPlans = () => {
                 </ul>
 
                 <button
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group ${
+                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group ${
                     plan.highlighted
                       ? "bg-white text-blue-600 hover:bg-blue-50"
                       : "bg-primary text-white hover:bg-blue-700"
